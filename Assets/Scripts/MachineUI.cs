@@ -1,4 +1,4 @@
-public sealed class UIMachine : IActive
+public sealed class MachineUI : IModelActive
 {
 	public bool IsScreenMenu { get; private set; }
 	public bool IsScreenScore { get; private set; }

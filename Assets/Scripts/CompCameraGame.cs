@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
 public class CompCameraGame : MonoBehaviour
 {
-	[NonReorderable]
+	[NonSerialized]
 	public Frustum RectInner;
-	[NonReorderable]
+	[NonSerialized]
 	public Frustum RectScreen;
-	[NonReorderable]
+	[NonSerialized]
 	public Frustum RectOuter;
 
 	private void Awake()

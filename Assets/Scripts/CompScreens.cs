@@ -10,30 +10,30 @@ public sealed class CompScreens : MonoBehaviour
 
 	//private void Awake()
 	//{
-	//	_screenStateScore = MainState.UIMachine.IsScreenScore;
+	//	_screenStateScore = Main.MachineUI.IsScreenScore;
 	//	ScreenScore.gameObject.SetActive(_screenStateScore);
-	//	_screenStateMenu = MainState.UIMachine.IsScreenMenu;
+	//	_screenStateMenu = Main.MachineUI.IsScreenMenu;
 	//	ScreenMenu.gameObject.SetActive(_screenStateMenu);
 	//}
 
 	//private void LateUpdate()
 	//{
-	//	if(_screenStateScore != MainState.UIMachine.IsScreenScore)
+	//	if(_screenStateScore != Main.MachineUI.IsScreenScore)
 	//	{
-	//		_screenStateScore = MainState.UIMachine.IsScreenScore;
+	//		_screenStateScore = Main.MachineUI.IsScreenScore;
 	//		ScreenScore.gameObject.SetActive(_screenStateScore);
 	//	}
 
-	//	if(_screenStateMenu != MainState.UIMachine.IsScreenMenu)
+	//	if(_screenStateMenu != Main.MachineUI.IsScreenMenu)
 	//	{
-	//		_screenStateMenu = MainState.UIMachine.IsScreenMenu;
+	//		_screenStateMenu = Main.MachineUI.IsScreenMenu;
 	//		ScreenMenu.gameObject.SetActive(_screenStateMenu);
 	//	}
 	//}
 
 	private void LateUpdate()
 	{
-		ScreenScore.gameObject.SetActive(MainState.UIMachine.IsScreenScore);
-		ScreenMenu.gameObject.SetActive(MainState.UIMachine.IsScreenMenu);
+		ScreenScore.gameObject.SetActive(Main.MachineUI.IsScreenScore);
+		ScreenMenu.gameObject.SetActive(Main.MachineUI.IsScreenMenu);
 	}
 }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class GameMachineBase : IActive
+public abstract class MachineGameBase : IModelActive
 {
 	public virtual bool IsLow => false;
 	public virtual bool IsMedium => false;

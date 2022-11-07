@@ -14,18 +14,18 @@ public class CompScreenScore : MonoBehaviour
 			var button = buttons[index];
 			if(button.name.Contains("retry"))
 			{
-				button.onClick.AddListener(MainState.GameStart);
+				button.onClick.AddListener(Main.GameStart);
 			}
 			if(button.name.Contains("change"))
 			{
-				button.onClick.AddListener(MainState.LobbyShow);
+				button.onClick.AddListener(Main.LobbyShow);
 			}
 		}
 	}
 
 	public void OnEnable()
 	{
-		TextAttempts.text = $"Всего попыток: {MainState.Attempts}";
-		TextDuration.text = $"Продолжительность попытки: {MainState.TimeLastSpent}";
+		TextAttempts.text = $"Всего попыток: {Main.Attempts}";
+		TextDuration.text = $"Продолжительность попытки: {Main.TimeLastSpent}";
 	}
 }

@@ -68,10 +68,10 @@ public class CompGame : MonoBehaviour
 
 	public void UnloadScene()
 	{
-		MainState.ClearObject(ref _pawn);
-		MainState.ClearSet(ref _boundTop);
-		MainState.ClearSet(ref _boundBottom);
-		MainState.ClearSet(ref _obstacles);
+		Main.ClearObject(ref _pawn);
+		Main.ClearSet(ref _boundTop);
+		Main.ClearSet(ref _boundBottom);
+		Main.ClearSet(ref _obstacles);
 	}
 
 	public void SpawnObstacle(float ratio)

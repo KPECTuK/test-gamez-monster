@@ -4,11 +4,11 @@ public class CompApp : MonoBehaviour
 {
 	private void Update()
 	{
-		MainState.Update();
+		Main.Update();
 	}
 
 	private void OnDestroy()
 	{
-		MainState.SaveState();
+		Main.SaveState();
 	}
 }

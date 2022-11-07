@@ -20,7 +20,7 @@ public class CompToggle : MonoBehaviour
 			}
 
 			callback = OnToggledLow;
-			toggle.isOn = MainState.GameMachine.IsLow;
+			toggle.isOn = Main.MachineGame.IsLow;
 		}
 
 		if(name.Contains("med"))
@@ -31,7 +31,7 @@ public class CompToggle : MonoBehaviour
 			}
 
 			callback = OnToggledMedium;
-			toggle.isOn = MainState.GameMachine.IsMedium;
+			toggle.isOn = Main.MachineGame.IsMedium;
 		}
 
 		if(name.Contains("high"))
@@ -42,7 +42,7 @@ public class CompToggle : MonoBehaviour
 			}
 
 			callback = OnToggledHigh;
-			toggle.isOn = MainState.GameMachine.IsHigh;
+			toggle.isOn = Main.MachineGame.IsHigh;
 		}
 
 		if(toggle.onValueChanged.GetPersistentEventCount() != 0)
@@ -57,7 +57,7 @@ public class CompToggle : MonoBehaviour
 	{
 		if(state)
 		{
-			MainState.SetLogicLow();
+			Main.SetLogicLow();
 		}
 	}
 
@@ -65,7 +65,7 @@ public class CompToggle : MonoBehaviour
 	{
 		if(state)
 		{
-			MainState.SetLogicMedium();
+			Main.SetLogicMedium();
 		}
 	}
 
@@ -73,7 +73,7 @@ public class CompToggle : MonoBehaviour
 	{
 		if(state)
 		{
-			MainState.SetLogicHigh();
+			Main.SetLogicHigh();
 		}
 	}
 }

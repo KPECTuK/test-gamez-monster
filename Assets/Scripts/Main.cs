@@ -1,61 +1,63 @@
 using System;
 using UnityEngine;
 
-public static class MainState
+public static class Main
 {
 	private const string KEY_ATTEMPTS_S = "attempts";
 
-	public static GameMachineBase GameMachine { get; private set; }
-	public static UIMachine UIMachine { get; }
+	public static MachineGameBase MachineGame { get; private set; }
+	public static MachineUI MachineUI { get; }
 
 	public static TimeSpan TimeLastSpent { get; private set; }
 	public static int Attempts { get; private set; }
 
-	private static IActive _current;
+	private static IModelActive _current;
 
-	static MainState()
+	static Main()
 	{
+		Debug.Log("Main: build state");
+
 		LoadState();
-		UIMachine = new UIMachine();
-		UIMachine.LobbyShow();
+		MachineUI = new MachineUI();
+		MachineUI.LobbyShow();
 		SetLogicMedium();
 	}
 
 	public static void GameStart()
 	{
-		_current = GameMachine;
-		UIMachine.GameStart();
-		GameMachine.GameStart();
+		_current = MachineGame;
+		MachineUI.GameStart();
+		MachineGame.GameStart();
 	}
 
 	public static void GameStop()
 	{
-		TimeLastSpent = GameMachine.TimeSpent;
+		TimeLastSpent = MachineGame.TimeSpent;
 		Attempts += 1;
-		_current = UIMachine;
-		GameMachine.GameStop();
-		UIMachine.GameStop();
+		_current = MachineUI;
+		MachineGame.GameStop();
+		MachineUI.GameStop();
 	}
 
 	public static void LobbyShow()
 	{
-		_current = UIMachine;
-		UIMachine.LobbyShow();
+		_current = MachineUI;
+		MachineUI.LobbyShow();
 	}
 
 	public static void SetLogicLow()
 	{
-		GameMachine = new GameMachineLow();
+		MachineGame = new MachineGameLow();
 	}
 
 	public static void SetLogicMedium()
 	{
-		GameMachine = new GameMachineMedium();
+		MachineGame = new MachineGameMedium();
 	}
 
 	public static void SetLogicHigh()
 	{
-		GameMachine = new GameMachineHigh();
+		MachineGame = new MachineGameHigh();
 	}
 
 	public static bool IsInput()

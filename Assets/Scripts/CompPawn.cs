@@ -5,6 +5,6 @@ public class CompPawn : MonoBehaviour
 {
 	private void OnTriggerEnter(Collider other)
 	{
-		MainState.GameStop();
+		Main.GameStop();
 	}
 }

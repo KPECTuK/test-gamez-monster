@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public sealed class GameMachineLow : GameMachineBase
+public sealed class MachineGameLow : MachineGameBase
 {
 	public override bool IsLow => true;
 
 	protected override void UpdateSpeed()
 	{
 		SpeedH = Vector3.right;
-		var vector = MainState.IsInput() ? Vector3.up : Vector3.down;
+		var vector = Main.IsInput() ? Vector3.up : Vector3.down;
 		SpeedV = vector * (2f + Mathf.Floor((float)TimeSpent.TotalSeconds / 15f));
 	}
 
